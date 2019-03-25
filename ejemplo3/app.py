@@ -11,5 +11,8 @@ def saluda(cadena):
 	nombre = cadena
 	return render_template("inicio.html",nombre=nombre)
 
+@app.route("/articulos/<int:numero>")
+def mostrar_ariculo(numero):
+    return render_template("articulos.html",id=numero)
 
 app.run(debug=True)
