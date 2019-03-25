@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo 5</title>
+</head>
+<body>
+	<h1>Frutas</h1>
+	<ul>
+		{# Empezamos un bucle #}
+		{% for elem in lista -%}
+			<li>{{elem}}</li>
+		{% endfor -%}
+	</ul>
+</body>
+</html>
