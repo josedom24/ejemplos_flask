@@ -5,7 +5,4 @@ app = Flask(__name__)
 def inicio():
 	lista = ["manzana","platano","piña","kiwi"]
 	return render_template("inicio.html", lista=lista)
-
-
-
 app.run(debug=True)

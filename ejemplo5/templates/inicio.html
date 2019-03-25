@@ -12,5 +12,22 @@
 			<li>{{elem}}</li>
 		{% endfor -%}
 	</ul>
+	<p>Lista con índice</p>
+	<ul>
+		{% for elem in lista -%}
+			<li>{{loop.index}} - {{ elem }}</li>
+		{% endfor -%}
+	</ul>
+	<p>Podemos saber si estamos en la primera iteración o en la última</p>
+	<p>Ademas podemos saber cuantas iteraciones se van dar:</p>
+	<ul>
+		{% for elem in lista -%}
+			{% if  loop.first -%}
+				<li><strong>{{loop.index}}/{{loop.length}} - {{ elem }}</strong></li>
+			{% else -%}
+				<li>{{loop.index}}/{{loop.length}} - {{ elem }}</li>
+			{% endif -%}
+		{% endfor -%}
+	</ul>
 </body>
 </html>
