@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo 7</title>
+</head>
+<body>
+	
+	{% if not nombre%}
+		<h2>Página principal</h2>
+	{% else %}
+		<h2>Hola, {{nombre}}</h2>
+		{% if edad%}
+			{% if edad>18%}
+				<h3>Tienes {{edad}} años. Es mayor de edad</h3>
+			{%else%}
+				<h3>Tienes {{edad}} años.</h3>
+			{% endif %}
+		{% endif %}
+    {% endif %}
+</body>
+</html>
