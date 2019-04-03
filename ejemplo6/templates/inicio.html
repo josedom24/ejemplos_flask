@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo 6</title>
+</head>
+<body>
+	<h2>Enlaces</h2>
+	{% if enlaces %}
+    	<ul>
+    	{% for enlace in enlaces -%}
+      		<li><a href="{{ enlace.url }}">{{ enlace.texto }}</a></li>
+    	{% endfor -%}
+		</ul>
+    {% else %}
+    	<p>No hay enlaces></p>
+    {% endif %}
+</body>
+</html>
