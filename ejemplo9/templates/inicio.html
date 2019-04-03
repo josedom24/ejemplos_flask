@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo 9</title>
+</head>
+<body>
+	<h1>Alumnos</h1>
+	{% if lista_notas %}
+		<ul>
+		{% for nota in lista_notas -%}
+			<li><a href="/alumno/{{nota.id}}">{{nota.nombre}}</a></li>
+		{% endfor -%}
+		</ul>
+	{% else %}
+		<p>No tenemos alumnos.</p>
+	{% endif %}
+</body>
+</html>
