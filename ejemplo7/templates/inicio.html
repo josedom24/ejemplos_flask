@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo 7</title>
+</head>
+<body>
+	{%if not num%}
+		<h2>Bienvenidos. Tablas de multiplicar</h2>
+		{% for i in range(1,11) -%}
+			<a href="/tabla/{{i}}">Tabla del {{i}}</a><br/>
+		{% endfor -%}
+		<br/>
+		{# Otra forma de hacerlo #}
+		{% for i in range(1,11) -%}
+			<a href="{{url_for('tabla',numero=i)}}">Tabla del {{i}}</a><br/>
+		{% endfor -%}
+	{% else %}
+		<h2>Tabla de multiplicar</h2>
+    	{% for i in range(1,11) -%}
+      		<p>{{num}} * {{i}} = {{num*i}}</p>
+		{% endfor -%}
+		<a href="/">Volver</a>
+	{% endif %}
+</body>
+</html>

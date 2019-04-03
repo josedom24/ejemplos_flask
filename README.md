@@ -14,4 +14,5 @@ Ejemplos para aprender flask:
 * [Ejemplo 10: Servir contenido estático]()
 * [Ejemplo 11: Herencia de plantillas]()
 * [Ejemplo 12: Plantillas con hojas de estilo]()
-* [Ejemplo 12: Envío de formularios con flask]()
+* [Ejemplo 13: Envío de formularios con flask utilizando dos plantillas]()
+* [Ejemplo 14: Envío de formularios con flask utilizando una plantilla]()
