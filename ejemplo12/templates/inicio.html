@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Página principal{% endblock %}
+{% block content %}
+    <h1>Realiza una suma</h1>
+    <form action="/suma" method="post">
+        <label>Número 1:</label>
+        <input type="text" name="numero1" required/>
+        <label>Número 2:</label>
+        <input type="text" name="numero2" required/>
+        <input type="submit" value="Enviar"/>
+    </form>
+{% endblock %}
