@@ -15,3 +15,4 @@ Ejemplos para aprender flask:
 * [Ejemplo 11: Herencia de plantillas](ejemplo11)
 * [Ejemplo 12: Envío de formularios con flask utilizando dos rutas](ejemplo12)
 * [Ejemplo 13: Envío de formularios con flask utilizando una ruta](ejemplo13)
+* [Ejemplo 14: Envío de formulario. Formulario completo](ejemplo14)

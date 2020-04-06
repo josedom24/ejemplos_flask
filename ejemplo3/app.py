@@ -1,15 +1,12 @@
 from flask import Flask, render_template
 app = Flask(__name__)	
 
-@app.route('/',methods=["GET","POST"])
-def inicio():
-	nombre = "NADIE"
-	return render_template("inicio.html",nombre=nombre)
 
-@app.route('/<cadena>',methods=["GET","POST"])
-def saluda(cadena):
+@app.route('/',methods=["GET","POST"])
+@app.route('/persona/<cadena>/<int:edad>',methods=["GET","POST"])
+def saluda(cadena="NADIE",edad=1):
 	nombre = cadena
-	return render_template("inicio.html",nombre=nombre)
+	return render_template("inicio.html",nombre=nombre,edad=edad)
 
 @app.route("/articulos/<int:numero>")
 def mostrar_ariculo(numero):
