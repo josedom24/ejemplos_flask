@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
 	<title>Ejemplo 10</title>
-	<link rel="stylesheet" href="{{url_for("static", filename='css/style.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
 		<header>
 				<h1>Mi sitio web</h1>
 				<p>Mi sitio web creado en html5</p>
 		 </header>
-		 <img src={{url_for('static', filename='img/tux.png')}}/>
+		 <img src="{{url_for('static', filename='img/tux.png')}}"/>
 </body>
 </html>
