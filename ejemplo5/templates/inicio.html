@@ -25,11 +25,13 @@
 	<ul>
 		{% for elem in lista -%}
 			{% if  loop.first -%}
+			    <p>Tenemos {{loop.length}} elementos en la lista.</p>
 				<li><strong>{{loop.index}}/{{loop.length}} - {{ elem }}</strong></li>
 			{% else -%}
 				<li>{{loop.index}}/{{loop.length}} - {{ elem }}</li>
 			{% endif -%}
 		{% endfor -%}
 	</ul>
+	
 </body>
 </html>

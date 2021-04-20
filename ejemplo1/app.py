@@ -11,7 +11,8 @@ def articulos():
 
 @app.route('/acercade')
 def acercade():
+    numero1=10
     return render_template("acercade.html")
 
 
-app.run("0.0.0.0",8000,debug=True)
+app.run("0.0.0.0",5000,debug=True)

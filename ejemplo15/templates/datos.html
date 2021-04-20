@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Datos{% endblock %}
+{% block content %}
+    <h2>Datos</h2>
+    <h3>Sistema operativo (lista): {{datos.lista_sistema_operativo}}</h3>
+    <h3>Sistema operativo (radio): {{datos.radio_sistema_operativo}}</h3>
+    <h3>Sistema operativo (checkbox):</h3>
+    {% for dato in datos.getlist("checkbox_sistema_operativo") %}
+	    	<p>{{dato}}</p>
+    {% endfor %}
+
+         
+{% endblock %}

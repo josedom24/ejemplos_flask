@@ -3,6 +3,6 @@ app = Flask(__name__)
 
 @app.route('/',methods=["GET","POST"])
 def inicio():
-	lista = ["sandía","manzana","platano","piña","kiwi","pera"]
+	lista = ["sandía","manzana","platano","piña","kiwi"]
 	return render_template("inicio.html", lista=lista)
 app.run(debug=True)

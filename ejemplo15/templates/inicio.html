@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Formularios dinámicos{% endblock %}
+{% block content %}
+    <h1>Creación de formularios dinámicos</h1>
+    <form action="/procesar" method="post">
+        
+        <!--Generamos una lista-->
+        <h2>Lista</h2>
+        <select name="lista_sistema_operativo">
+            {% for dato in datos %}
+                {% if seleccionado==dato.texto %}
+                    <option selected value="{{dato.valor}}">{{dato.texto}}</option>
+                {% else %}
+                    <option value="{{dato.valor}}">{{dato.texto}}</option>
+                {% endif %}
+            {% endfor %}
+        </select> 
+        <h2>radio</h2>
+        {% for dato in datos %}
+            {% if seleccionado==dato.texto %}
+                <input name="radio_sistema_operativo" type="radio" value="{{dato.valor}}" checked /> {{dato.texto}}
+            {% else %}
+                <input name="radio_sistema_operativo" type="radio" value="{{dato.valor}}" /> {{dato.texto}}
+            {% endif %}
+        {% endfor %}
+        <h2>checkbox</h2>
+        {% for dato in datos %}
+            {% if seleccionado==dato.texto %}
+                <input name="checkbox_sistema_operativo" type="checkbox" value="{{dato.valor}}" checked /> {{dato.texto}}
+            {% else %}
+                <input name="checkbox_sistema_operativo" type="checkbox" value="{{dato.valor}}" /> {{dato.texto}}
+            {% endif %}
+        {% endfor %}
+        <br/>
+        <input type="submit" value="Enviar"/>
+    </form>
+{% endblock %}
