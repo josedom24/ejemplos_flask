@@ -1,11 +1,24 @@
 {% extends "base.html" %}
 {% block title %}Formularios dinámicos{% endblock %}
 {% block content %}
+    
+    <p>Ante de generar un formulario dinámico, vamos a generar una lista HTML5.</p>
+    <p>La opción seleccionada la vamos a poner en "negrita"</p>
+    <ul>
+        {% for dato in datos %}
+            {% if seleccionado==dato.texto %}
+                <li><strong>{{dato.texto}}</strong></li>
+            {% else %}
+            <li>{{dato.texto}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
     <h1>Creación de formularios dinámicos</h1>
     <form action="/procesar" method="post">
         
         <!--Generamos una lista-->
-        <h2>Lista</h2>
+        <h2>select</h2>
         <select name="lista_sistema_operativo">
             {% for dato in datos %}
                 {% if seleccionado==dato.texto %}
