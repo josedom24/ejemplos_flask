@@ -2,16 +2,17 @@
 {% block title %}Login{% endblock %}
 {% block content %}
 <h1>Login</h1>
+    {% if error %}
+        <p><strong>Error en la contraseña!!!</strong></p>
+    {% endif %}
     <form action="/entrar" method="post">
         <label>Usuario:</label>
         <input type="text" name="usuario" value="{{usuario}}" required/>
         <label>Contraseña:</label>
-        <input type="passwd" name="pass" required/>
+        <input type="password" name="pass" required/>
         
         <select name="sistema">
             {% for dato in datos %}
-                <p>{{seleccionado}}</p>
-                <p>{{dato.valor}}</p>
                 {% if seleccionado==dato.valor %}
                     <option selected value="{{dato.valor}}">{{dato.texto}}</option>
                 {% else %}

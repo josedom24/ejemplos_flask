@@ -22,6 +22,6 @@ def entrar():
         if passwd=="asdasd":
             return render_template("entrar.html")	
         else:
-            return render_template("formulario.html",datos=datos,usuario=usuario,seleccionado=int(so))
+            return render_template("formulario.html",datos=datos,usuario=usuario,seleccionado=int(so),error=True)
 
 app.run(debug=True)
