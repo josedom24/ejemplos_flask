@@ -6,12 +6,22 @@ app = Flask(__name__)
 def inicio():
 	return render_template("inicio.html")
 
-@app.route('/entrar',methods=["POST"])
+@app.route('/entrar',methods=["GET","POST"])
 def entrar():
-    usuario=request.form.get("usuario")
-    passwd=request.form.get("pass")
-    if passwd=="asdasd":
-        return render_template("entrar.html")	
+    datos=[
+    {"valor":1,"texto":"Windows"},
+    {"valor":2,"texto":"Linux"},
+    {"valor":3,"texto":"MacOs"}
+    ]
+    if request.method=="GET":
+        return render_template("formulario.html",datos=datos)
     else:
-        return render_template("inicio.html",usuario=usuario)
+        usuario=request.form.get("usuario")
+        passwd=request.form.get("pass")
+        so=request.form.get("sistema")
+        if passwd=="asdasd":
+            return render_template("entrar.html")	
+        else:
+            return render_template("formulario.html",datos=datos,usuario=usuario,seleccionado=int(so))
+
 app.run(debug=True)
