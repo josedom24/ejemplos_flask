@@ -1,11 +1,17 @@
 from flask import Flask, render_template
 app = Flask(__name__)	
 
-@app.route('/',methods=["GET","POST"])
+@app.route('/')
 def inicio():
-	persona = "juan"
-	num1=10
-	num2=14
-	return render_template("inicio.html",nombre=persona,edad=12,numero1=num1,numero2=num2,resultado=num1+num2)
+    return render_template("inicio.html")
 
-app.run(debug=True)
+@app.route('/articulos')
+def articulos():
+    return render_template("articulos.html")
+
+@app.route('/acercade')
+def acercade():
+    return render_template("acercade.html")
+
+
+app.run("0.0.0.0",5000,debug=True)
