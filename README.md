@@ -2,7 +2,7 @@
 
 Ejemplos para aprender flask:
 
-* [Ejemplo 1: Página dinámica con varias rutas](ejemplo1)
+* [Ejemplo 1: Mi primer programa en flask](ejemplo1)
 * [Ejemplo 2: Uso de herencia de plantillas](ejemplo2)
 
 
