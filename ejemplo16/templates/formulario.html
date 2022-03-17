@@ -7,7 +7,7 @@
     {% endif %}
     <form action="/entrar" method="post">
         <label>Usuario:</label>
-        <input type="text" name="usuario" value="{{usuario}}" required/>
+        <input type="text" name="usuario" value="{{usuario|e}}" required/>
         <label>Contraseña:</label>
         <input type="password" name="pass" required/>
         
