@@ -1,11 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Ejemplo 1</title>
+    <link rel="stylesheet" href="/static/css/pure/pure-min.css">
+    <link rel="stylesheet" href="/static/css/pure/grids-responsive-min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-	<h1>Lista de artículos</h1>
-	<a href="/">Inicio</a>
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header">
+            <h1 class="brand-title">Ejemplos Python Flash</h1>
+            <h2 class="brand-tagline">Ejemplos para aprender flask</h2>
+        </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div class="pure-menu pure-menu-horizontal">
+			<a href="/" class="pure-menu-heading pure-menu-link">INICIO</a>
+			<ul class="pure-menu-list">
+				<li class="pure-menu-item">
+					<a class="pure-menu-link" href="/articulos">Lista de artículos</a>
+				</li>
+				<li class="pure-menu-item">
+					<a class="pure-menu-link" href="/acercade">Acerca de...</a>
+				</li>
+			</ul>
+		</div>
+        <div>
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+                <h1 class="content-subhead">Flask</h1>
+
+                <!-- A single blog post -->
+                <section class="post">
+                    <header class="post-header">
+                        
+
+                        <h2 class="post-title">Lista de artículos</h2>
+
+                        <p class="post-meta">
+                            By <a href="#" class="post-author">José Domingo</a> under <a class="post-category post-category-design" href="#">Python</a> <a class="post-category post-category-pure" href="#">Flask</a>
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            
+
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal">
+                    <ul>
+                        <li class="pure-menu-item"><a href="https://www.josedomingo.org" class="pure-menu-link">About</a></li>
+                        <li class="pure-menu-item"><a href="https://github.com/josedom24/ejemplos_flask" class="pure-menu-link">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

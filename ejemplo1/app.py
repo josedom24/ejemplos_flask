@@ -5,13 +5,12 @@ app = Flask(__name__)
 def inicio():
     return render_template("inicio.html")
 
-@app.route('/articulos/')
+@app.route('/articulos')
 def articulos():
     return render_template("articulos.html")
 
 @app.route('/acercade')
 def acercade():
-    numero1=10
     return render_template("acercade.html")
 
 
