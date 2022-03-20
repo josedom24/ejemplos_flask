@@ -17,9 +17,33 @@
         </header>
 
         <div class="post-description">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
+            <h1>Mostramos la segunda fruta</h1>
+            <p>{{lista[1]}}</p>
+            <h1>Frutas</h1>
+            <ul>
+                {# Empezamos un bucle #}
+                {% for elem in lista -%}
+                    <li>{{elem}}</li>
+                {% endfor -%}
+            </ul>
+            <p>Lista con índice</p>
+            <ul>
+                {% for elem in lista -%}
+                    <li>{{loop.index}} - {{ elem }}</li>
+                {% endfor -%}
+            </ul>
+            <p>Podemos saber si estamos en la primera iteración o en la última</p>
+            <p>Ademas podemos saber cuantas iteraciones se van dar:</p>
+            <ul>
+                {% for elem in lista -%}
+                    {% if  loop.first -%}
+                        <p>Tenemos {{loop.length}} elementos en la lista.</p>
+                        <li><strong>{{loop.index}}/{{loop.length}} - {{ elem }}</strong></li>
+                    {% else -%}
+                        <li>{{loop.index}}/{{loop.length}} - {{ elem }}</li>
+                    {% endif -%}
+                {% endfor -%}
+            </ul>
         </div>
     </section>
 </div>

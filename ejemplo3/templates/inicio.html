@@ -17,9 +17,20 @@
         </header>
 
         <div class="post-description">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
+            {% if not nombre%}
+		        <h2>Página principal</h2>
+	        {% else %}
+		        <h2>Hola, {{nombre|title}}</h2>
+		        {% if edad%}
+			        {% if edad>18%}
+				        <h3>Tienes {{edad}} años. Es mayor de edad</h3>
+			        {%else%}
+				        <h3>Tienes {{edad}} años.</h3>
+    			    {% endif %}
+	    	    {% endif %}
+            {% endif %}
+          
+            <p>La suma del {{numero1}} y el {{numero2}} es {{resultado}}.</p>
             <img class="pure-img" src="/static/img/flask.png">
         </div>
     </section>

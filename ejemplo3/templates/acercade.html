@@ -17,9 +17,15 @@
         </header>
 
         <div class="post-description">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
+            {% if enlaces %}
+    	        <ul>
+    	        {% for enlace in enlaces -%}
+      		        <li><a href="{{ enlace.url }}">{{ enlace.texto }}</a></li>
+    	        {% endfor -%}
+		        </ul>
+            {% else %}
+    	        <p>No hay enlaces</p>
+            {% endif %}
         </div>
     </section>
 </div>
