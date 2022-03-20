@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Ejemplo 3 - Acerca de{% endblock %}
+{% block title %}Ejemplo 4 - Acerca de{% endblock %}
 {% block content %}
 <div class="posts">
     <h1 class="content-subhead">Flask</h1>
@@ -17,15 +17,11 @@
         </header>
 
         <div class="post-description">
-            {% if enlaces %}
-    	        <ul>
-    	        {% for enlace in enlaces -%}
-      		        <li><a href="{{ enlace.url }}">{{ enlace.texto }}</a></li>
-    	        {% endfor -%}
-		        </ul>
+            {% if not nombre -%}
+                <p>No has indicado el nombre.</p>
             {% else %}
-    	        <p>No hay enlaces</p>
-            {% endif %}
+                <h1>Hola, {{nombre}}</h1>
+            {% endif -%}
         </div>
     </section>
 </div>

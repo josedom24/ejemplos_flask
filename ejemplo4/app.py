@@ -1,30 +1,23 @@
-from flask import Flask, render_template,abort
+from flask import Flask, render_template, request
 app = Flask(__name__)	
 
-@app.route('/',methods=["GET","POST"])
+@app.route('/')
 def inicio():
-	return render_template("inicio.html")
+    return render_template("inicio.html")
 
-@app.route('/<operador>/<int:op1>/<int:op2>',methods=["GET","POST"])
-def saluda(operador,op1,op2):
-	if operador=="sumar":
-		op = "+"
-		resultado = op1 + op2
-	elif operador=="restar":
-		op = "-"
-		resultado = op1 - op2
-	elif operador=="multiplicar":
-		op = "*"
-		resultado = op1 * op2
-	elif operador=="dividir":
-		op = "/"
-		try:
-			resultado = op1 / op2
-		except:
-			abort(404)
-	else:
-		abort(404)
-	return render_template("operar.html",num1=op1,num2=op2,op=op,res=resultado)
+@app.route('/articulos')
+def articulos():
+    nombre=request.args.get("nombre")
+    precio=request.args.get("precio")
+    return render_template("articulos.html",nombre=nombre,precio=precio)
+
+@app.route('/acercade')
+def acercade():
+    return render_template("acercade.html")
+
+@app.route('/acercade/<nombre>')
+def acercade_con_nombre(nombre,edad=0):
+    return render_template("acercade.html",nombre=nombre)
 
 
-app.run(debug=True)
+app.run("0.0.0.0",5000,debug=True)
