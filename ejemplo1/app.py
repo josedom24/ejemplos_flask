@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, abort, redirect
 app = Flask(__name__)	
 
 @app.route('/')
@@ -12,6 +12,14 @@ def articulos():
 @app.route('/acercade')
 def acercade():
     return render_template("acercade.html")
+
+@app.route('/error')
+def error():
+    return abort(404)
+
+@app.route('/redireccion')
+def redireccion():
+    return redirect("/articulos")
 
 
 app.run("0.0.0.0",5000,debug=True)
