@@ -15,9 +15,9 @@ def articulos():
 def acercade():
     return render_template("acercade.html")
 
-@app.route('/acercade/<nombre>')
-def acercade_con_nombre(nombre,edad=0):
-    return render_template("acercade.html",nombre=nombre)
+@app.route('/acercade/<nombre>/<edad>')
+def acercade_con_nombre(nombre,edad):
+    return render_template("acercade.html",nombre=nombre,edad=edad)
 
 
 app.run("0.0.0.0",5000,debug=True)
