@@ -1,9 +1,9 @@
-from flask import Flask, render_template, abort, redirect, request
+from flask import Flask, render_template, abort, request
 app = Flask(__name__)	
 
 @app.route('/')
 def inicio():
-    return redirect("/entrar")
+    return render_template("inicio.html")
 
 @app.route('/articulos')
 def articulos():
@@ -19,22 +19,15 @@ def acercade():
 def acercade_con_nombre(nombre,edad):
     return render_template("acercade.html",nombre=nombre,edad=edad)
 
-@app.route('/entrar',methods=["GET","POST"])
-def entrar():
-    datos=[
-    {"valor":1,"texto":"Windows"},
-    {"valor":2,"texto":"Linux"},
-    {"valor":3,"texto":"MacOs"}
-    ]
-    if request.method=="GET":
-        return render_template("formulario.html",datos=datos)
-    else:
-        usuario=request.form.get("usuario")
-        passwd=request.form.get("pass")
-        so=request.form.get("sistema")
-        if passwd=="asdasd":
-            return render_template("entrar.html")	
-        else:
-            return render_template("formulario.html",datos=datos,usuario=usuario,seleccionado=int(so),error=True)
+@app.route('/suma',methods=["POST"])
+def suma():
+    num1=request.form.get("numero1")
+    num2=request.form.get("numero2")
+    try:
+        resultado = int(num1) + int(num2)
+    except:
+        return abort(404)
+    return render_template("suma.html", num1=num1, num2=num2,
+resultado=resultado)	
 
 app.run("0.0.0.0",5000,debug=True)
