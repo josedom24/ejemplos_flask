@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Ejemplo 6 - Suma{% endblock %}
+{% block content %}
+<div class="posts">
+    <h1 class="content-subhead">Flask</h1>
+
+    <!-- A single blog post -->
+    <section class="post">
+        <header class="post-header">
+            
+
+            <h2 class="post-title">Página Principal</h2>
+
+            <p class="post-meta">
+                By <a href="#" class="post-author">José Domingo</a> under <a class="post-category post-category-design" href="#">Python</a> <a class="post-category post-category-pure" href="#">Flask</a>
+            </p>
+        </header>
+
+        <div class="post-description">
+            <h1>Login</h1>
+            {% if error %}
+                <p><strong>Error en la contraseña!!!</strong></p>
+            {% endif %}
+            <form action="/entrar" method="post">
+                <label>Usuario:</label>
+                <input type="text" name="usuario" value="{{usuario|e}}" required/>
+                <label>Contraseña:</label>
+                <input type="password" name="pass" required/>
+                
+                <select name="sistema">
+                    {% for dato in datos %}
+                        {% if seleccionado==dato.valor %}
+                            <option selected value="{{dato.valor}}">{{dato.texto}}</option>
+                        {% else %}
+                            <option value="{{dato.valor}}">{{dato.texto}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select> 
+                <br/>
+                <input type="submit" value="Enviar"/>
+            </form>
+        </div>
+    </section>
+</div>
+{% endblock %}
