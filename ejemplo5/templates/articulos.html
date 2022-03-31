@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Ejemplo 5 - Artículos{% endblock %}
+{% block content %}
+<div class="posts">
+    <h1 class="content-subhead">Flask</h1>
+
+    <!-- A single blog post -->
+    <section class="post">
+        <header class="post-header">
+            
+
+            <h2 class="post-title">Lista de artículos</h2>
+
+            <p class="post-meta">
+                By <a href="#" class="post-author">José Domingo</a> under <a class="post-category post-category-design" href="#">Python</a> <a class="post-category post-category-pure" href="#">Flask</a>
+            </p>
+        </header>
+
+        <div class="post-description">
+            {% if not nombre -%}
+                <h1>No has indicado ningún artículo</h1>
+            {% else %}
+                <h1>Artículo: {{nombre}}: precio {{precio}} euros.</h1>
+            {% endif -%}
+        </div>
+    </section>
+</div>
+{% endblock %}

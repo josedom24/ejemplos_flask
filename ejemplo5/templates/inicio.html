@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Ejemplo 5 - Inicio{% endblock %}
+{% block content %}
+<div class="posts">
+    <h1 class="content-subhead">Flask</h1>
+
+    <!-- A single blog post -->
+    <section class="post">
+        <header class="post-header">
+            
+
+            <h2 class="post-title">Página Principal</h2>
+
+            <p class="post-meta">
+                By <a href="#" class="post-author">José Domingo</a> under <a class="post-category post-category-design" href="#">Python</a> <a class="post-category post-category-pure" href="#">Flask</a>
+            </p>
+        </header>
+
+        <div class="post-description">
+            <p>Mandar información a artículos usando el método GET:</p>
+            <ul>
+                <li><a href="/articulos?nombre=Manzana&precio=10">Artículo Manzana</a></li>
+                <li><a href="/acercade/Pepe/20">Acerca de Pepe</a></li>
+            </ul>
+            <h2>Sumar</h2>
+            <form action="/suma" method="post">
+                <label>Número 1:</label>
+                <input type="text" name="numero1" required/><br/>
+                <label>Número 2:</label>
+                <input type="text" name="numero2" required/><br/>
+                <input type="submit" value="Enviar"/>
+            </form>
+        </div>
+    </section>
+</div>
+{% endblock %}

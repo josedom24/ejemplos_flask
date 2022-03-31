@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/pure/pure-min.css">
+    <link rel="stylesheet" href="/static/css/pure/grids-responsive-min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header">
+            <h1 class="brand-title">Ejemplos Python Flash</h1>
+            <h2 class="brand-tagline">Ejemplos para aprender flask</h2>
+        </div>
+		
+    </div>
+	
+    <div class="content pure-u-1 pure-u-md-3-4">
+		<div class="pure-menu pure-menu-horizontal">
+			<a href="/" class="pure-menu-heading pure-menu-link">INICIO</a>
+			<ul class="pure-menu-list">
+				<li class="pure-menu-item">
+					<a class="pure-menu-link" href="/articulos">Lista de artículos</a>
+				</li>
+				<li class="pure-menu-item">
+					<a class="pure-menu-link" href="/acercade">Acerca de...</a>
+				</li>
+			</ul>
+		</div>
+        <div>
+            <!-- A wrapper for all the blog posts -->
+            {% block content %}{% endblock %}
+          
+
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal">
+                    <ul>
+                        <li class="pure-menu-item"><a href="https://www.josedomingo.org" class="pure-menu-link">About</a></li>
+                        <li class="pure-menu-item"><a href="https://github.com/josedom24/ejemplos_flask" class="pure-menu-link">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
