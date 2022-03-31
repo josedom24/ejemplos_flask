@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Ejemplo 4 - Acerca de{% endblock %}
+{% block content %}
+<div class="posts">
+    <h1 class="content-subhead">Flask</h1>
+
+    <!-- A single blog post -->
+    <section class="post">
+        <header class="post-header">
+            
+
+            <h2 class="post-title">Acerca de...</h2>
+
+            <p class="post-meta">
+                By <a href="#" class="post-author">José Domingo</a> under <a class="post-category post-category-design" href="#">Python</a> <a class="post-category post-category-pure" href="#">Flask</a>
+            </p>
+        </header>
+
+        <div class="post-description">
+            {% if lista_notas %}
+		        <ul>
+		        {% for nota in lista_notas -%}
+		        	<li><a href="/alumno/{{nota.id}}">{{nota.nombre}}</a></li>
+		        {% endfor -%}
+		        </ul>
+	        {% else %}
+		        <p>No tenemos alumnos.</p>
+            {% endif %}
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+
+
+            
