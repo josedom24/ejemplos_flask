@@ -8,6 +8,6 @@ Ejemplos para aprender flask:
 * [Ejemplo 4: Envío de información con GET](ejemplo4)
 * [Ejemplo 5: Patrón de diseño: Lista - Detalle](ejemplo5)
 * [Ejemplo 6: Envío de información con formularios](ejemplo6)
-* [Ejemplo 7: Generación e formulario que recuerden la información](ejemplo7)
+* [Ejemplo 7: Formulario que recuerden información](ejemplo7)
 
 
